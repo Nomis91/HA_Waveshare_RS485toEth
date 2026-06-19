@@ -9,6 +9,7 @@ from ..const import (
     DEVICE_TYPE_DEYE_SUN_6K,
     DEVICE_TYPE_DEYE_SUN_8K,
     DEVICE_TYPE_GENERIC_MODBUS,
+    DEVICE_TYPE_PYTES_EBOX_48100R,
     SUPPORTED_DEVICE_MODELS,
 )
 from .base import BaseDevice
@@ -146,6 +147,8 @@ class DeviceDiscovery:
         0x0106: DEVICE_TYPE_DEYE_SUN_6K,
         # Deye Hybrid GW4137
         0x0200: DEVICE_TYPE_DEYE_HYBRID_GW4137,
+        # Pytes E-Box 48100R
+        0x4810: DEVICE_TYPE_PYTES_EBOX_48100R,
     }
 
     @staticmethod

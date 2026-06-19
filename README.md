@@ -13,6 +13,7 @@ A complete Home Assistant integration for real-time monitoring and control of So
 - Deye Sun 12K
 - Deye Sun 8K
 - Deye Sun 6K
+- Pytes E-Box 48100R (LiFePO4 battery)
 - Deye Hybrid GW4137
 - Generic Modbus devices (user-configurable)
 

@@ -2,7 +2,7 @@
 
 ## Supported Inverter Models
 
-This integration supports the following Deye Solar Inverter models natively:
+This integration supports the following Deye Solar Inverter models and Pytes battery systems natively:
 
 ### Deye Sun Series
 
@@ -56,6 +56,24 @@ This integration supports the following Deye Solar Inverter models natively:
 - **Status**: Fully supported
 - **Registers Supported**: 30+ (Sun 12K set + AC output sensors)
 
+### Battery Systems
+
+#### Pytes E-Box 48100R ✅
+- **Model**: E-Box 48100R (48V 100Ah LiFePO4)
+- **Type Code**: 0x4810
+- **Features**:
+  - Battery voltage/current/power monitoring
+  - State of charge (SOC)
+  - Cell voltage monitoring (min/max/avg)
+  - Cell temperature monitoring
+  - Charge/discharge status
+  - Cycle count tracking
+  - Energy counters (charged/discharged)
+  - BMS status and fault codes
+- **Firmware**: Compatible with Modbus protocol enabled
+- **Status**: Fully supported
+- **Registers Supported**: 25+
+
 ## Unsupported Models (Generic Modbus)
 
 For inverters not listed above, use **Generic Modbus** mode:
@@ -89,6 +107,7 @@ The integration automatically identifies devices using the **Device ID Register*
 | 0x0108 | Deye Sun 8K | ✅ Automatic |
 | 0x0106 | Deye Sun 6K | ✅ Automatic |
 | 0x0200 | Deye Hybrid GW4137 | ✅ Automatic |
+| 0x4810 | Pytes E-Box 48100R | ✅ Automatic |
 | Other | Generic Device | ⚠️ Manual config |
 
 ## Register Compatibility

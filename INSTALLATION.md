@@ -32,15 +32,59 @@ Test-NetConnection -ComputerName <gateway_ip> -Port 8234
 
 ## Step 2: Install the Integration
 
-### Option A: Automatic Installation (HACS)
-If using HACS (Home Assistant Community Store):
+### Option A: Installation via HACS
 
-1. Open Home Assistant
-2. Go to **HACS → Integrations**
-3. Click **+ Create Integration**
-4. Search for "Waveshare RS485-to-ETH"
-5. Click **Install**
-6. Restart Home Assistant
+[HACS](https://hacs.xyz/) (Home Assistant Community Store) is the easiest way to install and manage custom integrations.
+
+#### Prerequisites
+
+- HACS must be installed in your Home Assistant instance
+  - If not installed, follow the official guide: https://hacs.xyz/docs/use/download/download/
+- Home Assistant 2023.12.0 or newer
+
+#### Steps
+
+1. **Add Custom Repository**:
+   - Open Home Assistant
+   - Go to **HACS** (in the sidebar)
+   - Click the three-dot menu (⋮) in the top-right corner
+   - Select **Custom repositories**
+   - In the dialog that opens:
+     - **Repository**: Enter the GitHub URL:
+       ```
+       https://github.com/Nomis91/HA_Waveshare_RS485toEth
+       ```
+     - **Category**: Select **Integration**
+   - Click **Add**
+   - Wait for HACS to validate the repository
+
+2. **Install the Integration**:
+   - Go to **HACS → Integrations**
+   - Search for **"Waveshare RS485-to-ETH"**
+   - Click on it to open the details page
+   - Click **Download** in the bottom-right corner
+   - Confirm the download
+   - Wait for HACS to download the files
+
+3. **Restart Home Assistant**:
+   - Go to **Settings → System → Restart**
+   - Click **Restart Home Assistant**
+   - Wait for Home Assistant to fully restart
+
+4. **Enable the Integration**:
+   - Go to **Settings → Devices & Services → Integrations**
+   - Click **+ Create Integration**
+   - Search for **"Waveshare RS485-to-ETH Gateway"**
+   - Follow the configuration wizard (see [CONFIGURATION.md](CONFIGURATION.md))
+
+#### Keeping the Integration Updated
+
+Once installed via HACS, updates will be detected automatically:
+
+1. Go to **HACS → Integrations**
+2. If an update is available, you will see an **Update** indicator
+3. Click on the integration and then **Update**
+4. Restart Home Assistant to apply the update
 
 ### Option B: Manual Installation
 

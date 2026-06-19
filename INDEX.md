@@ -157,6 +157,7 @@ Home Assistant UI (Dashboard, Automations, etc.)
 - **Deye Sun 8K** (0x0108) ✅
 - **Deye Sun 6K** (0x0106) ✅
 - **Deye Hybrid GW4137** (0x0200) ✅
+- **Pytes E-Box 48100R** (0x4810) ✅
 - **Generic Modbus** (user-configurable) ✅
 
 See [SUPPORTED_DEVICES.md](SUPPORTED_DEVICES.md) for complete device compatibility.
