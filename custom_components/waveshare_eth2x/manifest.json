@@ -1,7 +1,7 @@
 {
   "domain": "waveshare_eth2x",
   "name": "Waveshare Eth2X",
-  "codeowners": ["@yourusername"],
+  "codeowners": ["@Nomis91"],
   "config_flow": true,
   "documentation": "https://github.com/Nomis91/HA_Waveshare_Eth2X",
   "requirements": [
