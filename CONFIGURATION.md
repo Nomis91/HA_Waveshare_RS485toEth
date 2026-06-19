@@ -1,4 +1,4 @@
-# Configuration Guide - Waveshare RS485-to-ETH Home Assistant Integration
+# Configuration Guide - Waveshare Eth2X Home Assistant Integration
 
 ## Configuration Overview
 
@@ -6,7 +6,7 @@ This integration uses a 3-step configuration wizard accessible from **Settings â
 
 ## Step 1: Gateway Connection
 
-The first step configures your Waveshare RS485-to-ETH device.
+The first step configures your Waveshare Eth2X device.
 
 ### Fields
 
@@ -315,3 +315,4 @@ For configuration issues:
 2. Review [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 3. Enable debug logging in Home Assistant
 4. Check system logs for error messages
+       

@@ -1,11 +1,11 @@
-# Installation Guide - Waveshare RS485-to-ETH Home Assistant Integration
+# Installation Guide - Waveshare Eth2X Home Assistant Integration
 
 ## Prerequisites
 
 Before installing this integration, ensure you have:
 
 - **Home Assistant**: Version 2023.12.0 or newer (install from https://www.home-assistant.io)
-- **Waveshare RS485-to-ETH Device**: 
+- **Waveshare Eth2X Device**: 
   - Model: RS485 to Ethernet converter
   - Default TCP port: 8234
   - Network connectivity verified
@@ -52,7 +52,7 @@ Test-NetConnection -ComputerName <gateway_ip> -Port 8234
    - In the dialog that opens:
      - **Repository**: Enter the GitHub URL:
        ```
-       https://github.com/Nomis91/HA_Waveshare_RS485toEth
+       https://github.com/Nomis91/HA_Waveshare_Eth2X
        ```
      - **Category**: Select **Integration**
    - Click **Add**
@@ -60,7 +60,7 @@ Test-NetConnection -ComputerName <gateway_ip> -Port 8234
 
 2. **Install the Integration**:
    - Go to **HACS → Integrations**
-   - Search for **"Waveshare RS485-to-ETH"**
+3. Search for **"Waveshare Eth2X"**
    - Click on it to open the details page
    - Click **Download** in the bottom-right corner
    - Confirm the download
@@ -74,7 +74,7 @@ Test-NetConnection -ComputerName <gateway_ip> -Port 8234
 4. **Enable the Integration**:
    - Go to **Settings → Devices & Services → Integrations**
    - Click **+ Create Integration**
-   - Search for **"Waveshare RS485-to-ETH Gateway"**
+   - Search for **"Waveshare Eth2X Gateway"**
    - Follow the configuration wizard (see [CONFIGURATION.md](CONFIGURATION.md))
 
 #### Keeping the Integration Updated
@@ -91,11 +91,11 @@ Once installed via HACS, updates will be detected automatically:
 1. Download the integration files to your computer
 2. Connect to your Home Assistant system (via SSH or file browser)
 3. Navigate to: `custom_components/` folder
-4. Create folder: `waveshare_rs485toeth/`
+4. Create folder: `waveshare_eth2x/`
 5. Copy all integration files to this folder
 6. Directory structure should be:
    ```
-   ~/.homeassistant/custom_components/waveshare_rs485toeth/
+   ~/.homeassistant/custom_components/waveshare_eth2x/
    ├── __init__.py
    ├── config_flow.py
    ├── const.py
@@ -117,7 +117,7 @@ After installation:
 1. Open Home Assistant web interface
 2. Go to **Settings → Devices & Services → Integrations**
 3. Click the **+ Create Integration** button
-4. Search for "Waveshare RS485-to-ETH Gateway"
+4. Search for "Waveshare Eth2X Gateway"
 5. Click to select the integration
 6. Follow the 3-step configuration wizard (see Configuration Guide below)
 
@@ -128,9 +128,9 @@ Once configured:
 1. Check **Settings → Devices & Services** for a new device entry
 2. Click the device to see created entities
 3. Look for sensors like:
-   - `sensor.waveshare_rs485toeth_*_solar_pv1_power`
-   - `binary_sensor.waveshare_rs485toeth_*_connection_status`
-   - `sensor.waveshare_rs485toeth_*_response_time`
+   - `sensor.waveshare_eth2x_*_solar_pv1_power`
+   - `binary_sensor.waveshare_eth2x_*_connection_status`
+   - `sensor.waveshare_eth2x_*_response_time`
 4. Entities should update regularly (default: every 30 seconds)
 
 ## Waveshare Device Setup
@@ -234,11 +234,12 @@ If you encounter issues:
 To remove the integration:
 
 1. Go to **Settings → Devices & Services → Integrations**
-2. Find "Waveshare RS485-to-ETH Gateway"
+2. Find "Waveshare Eth2X Gateway"
 3. Click the three-dot menu
 4. Select **Delete**
 5. Confirm deletion
 
 To uninstall completely:
-1. Delete `~/.homeassistant/custom_components/waveshare_rs485toeth/` folder
+1. Delete `~/.homeassistant/custom_components/waveshare_eth2x/` folder
 2. Restart Home Assistant
+     

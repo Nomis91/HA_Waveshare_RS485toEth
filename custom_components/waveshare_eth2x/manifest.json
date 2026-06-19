@@ -1,0 +1,14 @@
+{
+  "domain": "waveshare_eth2x",
+  "name": "Waveshare Eth2X",
+  "codeowners": ["@yourusername"],
+  "config_flow": true,
+  "documentation": "https://github.com/Nomis91/HA_Waveshare_Eth2X",
+  "requirements": [
+    "pymodbus>=3.0.0"
+  ],
+  "version": "1.0.0",
+  "issue_tracker": "https://github.com/Nomis91/HA_Waveshare_Eth2X/issues",
+  "iot_class": "local_polling",
+  "homeassistant": "2023.12.0"
+}

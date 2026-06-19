@@ -1,4 +1,4 @@
-# Project Index - Waveshare RS485-to-ETH Home Assistant Integration
+# Project Index - Waveshare Eth2X Home Assistant Integration
 
 ## 📋 Documentation Files
 
@@ -14,7 +14,7 @@
 ## 🏗️ Integration Structure
 
 ```
-custom_components/deye_sun_12k/
+custom_components/waveshare_eth2x/
 │
 ├── Core Files
 │   ├── __init__.py                 Entry point, lifecycle management
@@ -118,7 +118,7 @@ custom_components/deye_sun_12k/
 
 ## 🔧 Configuration Entry Point
 
-Main integration entry: [custom_components/deye_sun_12k/__init__.py](custom_components/deye_sun_12k/__init__.py)
+Main integration entry: [custom_components/waveshare_eth2x/__init__.py](custom_components/waveshare_eth2x/__init__.py)
 
 Key functions:
 - `async_setup()` - Legacy YAML setup (placeholder)
@@ -182,7 +182,7 @@ See [SUPPORTED_DEVICES.md](SUPPORTED_DEVICES.md) for complete device compatibili
 - Health & error diagnostics
 - UI-based configuration
 
-**Deployment Location**: `~/.homeassistant/custom_components/deye_sun_12k/`
+**Deployment Location**: `~/.homeassistant/custom_components/waveshare_eth2x/`
 
 **Minimum Home Assistant Version**: 2023.12.0
 

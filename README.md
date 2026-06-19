@@ -1,11 +1,11 @@
-# Waveshare RS485-to-ETH Home Assistant Integration
+# Waveshare Eth2X Home Assistant Integration
 
-A complete Home Assistant integration for real-time monitoring and control of Solar Inverters connected via Waveshare RS485-to-ETH devices.
+A complete Home Assistant integration for real-time monitoring and control of Solar Inverters connected via Waveshare Eth2X devices.
 
 ## Features
 
 ✅ **Multi-Gateway Support**
-- Connect multiple RS485-to-ETH gateways
+- Connect multiple Eth2X gateways
 - Multiple devices per gateway (different Modbus slave IDs)
 - Independent device configuration for each gateway
 
@@ -66,7 +66,7 @@ A complete Home Assistant integration for real-time monitoring and control of So
 
 ### Requirements
 - Home Assistant 2023.12.0 or newer
-- Waveshare RS485-to-ETH device with default TCP port 8234
+- Waveshare Eth2X device with default TCP port 8234
 - Deye Solar Inverter connected to RS485 gateway
 - Network connectivity between Home Assistant and gateway device
 
@@ -74,14 +74,14 @@ A complete Home Assistant integration for real-time monitoring and control of So
 
 1. Download the integration to your Home Assistant custom components:
    ```
-   custom_components/waveshare_rs485toeth/
+   custom_components/waveshare_eth2x/
    ```
 
 2. Restart Home Assistant or reload custom components
 
 3. Go to **Settings → Devices & Services → Integrations**
 
-4. Click **Create Integration** and search for "Waveshare RS485-to-ETH"
+4. Click **Create Integration** and search for "Waveshare Eth2X"
 
 ### Configuration
 
@@ -185,9 +185,9 @@ Entities are automatically named using the convention:
 ```
 
 Examples:
-- `sensor.waveshare_rs485toeth_192_168_1_100_1_solar_pv1_power`
-- `binary_sensor.waveshare_rs485toeth_192_168_1_100_1_connection_status`
-- `number.waveshare_rs485toeth_192_168_1_100_1_battery_charge_limit`
+- `sensor.waveshare_eth2x_192_168_1_100_1_solar_pv1_power`
+- `binary_sensor.waveshare_eth2x_192_168_1_100_1_connection_status`
+- `number.waveshare_eth2x_192_168_1_100_1_battery_charge_limit`
 
 ## Performance & Limitations
 
@@ -198,7 +198,7 @@ Examples:
 - Multi-gateway support: Limited by network bandwidth and Home Assistant CPU
 
 ### Limitations
-- Requires at least one Waveshare RS485-to-ETH device
+- Requires at least one Waveshare Eth2X device
 - Does not support serial RS485 connections directly
 - Maximum 247 devices per gateway (Modbus limitation)
 - Write operations not yet fully implemented (entities created but not functional)
@@ -220,9 +220,9 @@ Enable debug logging:
 ```yaml
 logger:
   logs:
-    custom_components.waveshare_rs485toeth: debug
-    custom_components.waveshare_rs485toeth.core: debug
-    custom_components.waveshare_rs485toeth.coordinators: debug
+    custom_components.waveshare_eth2x: debug
+    custom_components.waveshare_eth2x.core: debug
+    custom_components.waveshare_eth2x.coordinators: debug
 ```
 
 ## Contributing
@@ -241,3 +241,4 @@ This integration is provided as-is for Home Assistant users.
 ## Support
 
 For issues, questions, or feature requests, please refer to the Home Assistant community forums.
+       

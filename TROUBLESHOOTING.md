@@ -1,4 +1,4 @@
-# Troubleshooting Guide - Waveshare RS485-to-ETH Home Assistant Integration
+# Troubleshooting Guide - Waveshare Eth2X Home Assistant Integration
 
 ## Quick Diagnostics
 
@@ -22,24 +22,24 @@
 
 **Symptoms**: 
 - Integration doesn't appear in integration list
-- "Waveshare RS485-to-ETH" not searchable
+- "Waveshare Eth2X" not searchable
 
 **Diagnosis**:
 ```bash
 # SSH into Home Assistant
-ls -la /root/.homeassistant/custom_components/waveshare_rs485toeth/
+ls -la /root/.homeassistant/custom_components/waveshare_eth2x/
 # Should see __init__.py, config_flow.py, etc.
 ```
 
 **Solutions**:
 1. Verify file permissions (should be readable)
    ```bash
-   chmod -R 755 /root/.homeassistant/custom_components/waveshare_rs485toeth/
+   chmod -R 755 /root/.homeassistant/custom_components/waveshare_eth2x/
    ```
 
 2. Check YAML syntax in manifest.json
    ```bash
-   cat /root/.homeassistant/custom_components/waveshare_rs485toeth/manifest.json
+   cat /root/.homeassistant/custom_components/waveshare_eth2x/manifest.json
    ```
 
 3. Restart Home Assistant completely
@@ -47,7 +47,7 @@ ls -la /root/.homeassistant/custom_components/waveshare_rs485toeth/
 
 4. Check logs for Python errors
    - **Settings → System → Logs**
-- Search for "waveshare_rs485toeth"
+- Search for "waveshare_eth2x"
 
 ### Dependency Errors
 
@@ -561,10 +561,10 @@ Add to `configuration.yaml`:
 ```yaml
 logger:
   logs:
-    custom_components.waveshare_rs485toeth: debug
-    custom_components.waveshare_rs485toeth.core: debug
-    custom_components.waveshare_rs485toeth.coordinators: debug
-    custom_components.waveshare_rs485toeth.health: debug
+    custom_components.waveshare_eth2x: debug
+    custom_components.waveshare_eth2x.core: debug
+    custom_components.waveshare_eth2x.coordinators: debug
+    custom_components.waveshare_eth2x.health: debug
 ```
 
 Then:
@@ -614,7 +614,7 @@ Reload the integration if:
 
 **UI Method**:
 1. Go to **Settings → Devices & Services → Integrations**
-2. Find "Waveshare RS485-to-ETH Gateway"
+2. Find "Waveshare Eth2X Gateway"
 3. Click the menu (three dots)
 4. Select **Reload**
 
@@ -661,3 +661,4 @@ Many issues are resolved by:
 3. Reloading the integration
 4. Checking RS485 connections
 5. Verifying network connectivity
+                           

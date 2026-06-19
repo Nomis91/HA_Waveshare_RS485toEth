@@ -1,4 +1,4 @@
-# Supported Devices - Waveshare RS485-to-ETH Home Assistant Integration
+# Supported Devices - Waveshare Eth2X Home Assistant Integration
 
 ## Supported Inverter Models
 
@@ -195,7 +195,7 @@ Check with Deye for latest firmware updates:
 ## Hardware Requirements
 
 ### Modbus Interface
-- **RS485-to-ETH Device**: Waveshare or compatible converter
+- **Eth2X Device**: Waveshare or compatible converter
 - **TCP Port**: 8234 (default, configurable)
 - **Baud Rate**: 9600 bps (standard Deye setting)
 
@@ -258,7 +258,7 @@ To add support for additional inverter models:
 
 1. **Create Device Class**:
    ```python
-   # custom_components/waveshare_rs485toeth/devices/my_inverter.py
+   # custom_components/waveshare_eth2x/devices/my_inverter.py
    from .base import BaseDevice, RegisterDef
    
    class MyInverter(BaseDevice):
@@ -277,13 +277,13 @@ To add support for additional inverter models:
 
 2. **Register Device**:
    ```python
-   # In custom_components/waveshare_rs485toeth/devices/registry.py
+   # In custom_components/waveshare_eth2x/devices/registry.py
    DeviceRegistry.register("my_inverter", MyInverter)
    ```
 
 3. **Add to Signatures**:
    ```python
-   # In custom_components/waveshare_rs485toeth/const.py
+   # In custom_components/waveshare_eth2x/const.py
    DEVICE_SIGNATURES = {
        0x9999: "my_inverter",
    }
