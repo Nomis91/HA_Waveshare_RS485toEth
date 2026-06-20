@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+  workflow_dispatch:
+
+jobs:
+  # ------------------------------------------------------------------------- #
+  # 1. Smoke test: can the integration package even be imported?                #
+  #    Catches broken relative imports, missing __init__.py, syntax errors.    #
+  # ------------------------------------------------------------------------- #
+  import-smoke-test:
+    name: Import smoke test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install runtime dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # Install HA + pymodbus + voluptuous, the bare minimum to import the
+          # integration modules. We do not need a full HA install for the
+          # smoke test; a frozen HA wheel is enough.
+          pip install \
+            "homeassistant==2024.12.5" \
+            "pymodbus>=3.0.0"
+
+      - name: Run import smoke test
+        # The integration must import without raising. If any relative import
+        # is broken (e.g. `from .const` inside a subpackage), this fails.
+        run: |
+          cd custom_components
+          python -c "
+          import waveshare_eth2x
+          import waveshare_eth2x.const
+          import waveshare_eth2x.config_flow
+          import waveshare_eth2x.coordinators.integration
+          import waveshare_eth2x.core.gateway
+          import waveshare_eth2x.core.protocol
+          import waveshare_eth2x.devices.registry
+          import waveshare_eth2x.devices.deye_sun_12k
+          import waveshare_eth2x.devices.deye_sun_8k
+          import waveshare_eth2x.devices.deye_sun_6k
+          import waveshare_eth2x.devices.deye_hybrid_gw4137
+          import waveshare_eth2x.devices.generic_modbus
+          import waveshare_eth2x.devices.pytes_ebox_48100r
+          import waveshare_eth2x.errors.tracker
+          import waveshare_eth2x.health.monitor
+          import waveshare_eth2x.platforms.sensor
+          import waveshare_eth2x.platforms.binary_sensor
+          import waveshare_eth2x.platforms.number
+          import waveshare_eth2x.platforms.select
+          # Verify the manifest + domain are consistent.
+          import json
+          with open('waveshare_eth2x/manifest.json') as f:
+              m = json.load(f)
+          assert m['domain'] == waveshare_eth2x.const.DOMAIN, \
+              f'manifest.domain ({m[\"domain\"]}) != const.DOMAIN ({waveshare_eth2x.const.DOMAIN})'
+          print('OK: integration imports cleanly and domain is consistent')
+          "
+
+  # ------------------------------------------------------------------------- #
+  # 2. Validate manifest.json against the Home Assistant schema.               #
+  #    Catches missing keys, wrong types, bad version format, etc.            #
+  # ------------------------------------------------------------------------- #
+  hassfest:
+    name: HASS Fest manifest validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run hassfest
+        uses: home-assistant/actions/hassfest@master
+
+  # ------------------------------------------------------------------------- #
+  # 3. HACS validator. Checks hacs.json + the repo layout matches the         #
+  #    HACS expectations.                                                      #
+  # ------------------------------------------------------------------------- #
+  hacs:
+    name: HACS action
+    runs-on: ubuntu-latest
+    steps:
+      - name: HACS Action
+        uses: hacs/action@main
+        with:
+          category: integration
