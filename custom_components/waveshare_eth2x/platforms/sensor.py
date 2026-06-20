@@ -14,7 +14,7 @@ from homeassistant.helpers.entity import Entity, DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import StateType
 
-from .const import (
+from ..const import (
     DOMAIN,
     ENTITY_CATEGORY_DIAGNOSTIC,
     MANUFACTURER,
@@ -26,8 +26,8 @@ from .const import (
     UNIT_TEMPERATURE_C,
     UNIT_VOLTAGE_V,
 )
-from .coordinators.integration import IntegrationCoordinator
-from .devices.base import BaseDevice
+from ..coordinators.integration import IntegrationCoordinator
+from ..devices.base import BaseDevice
 
 _LOGGER = logging.getLogger(__name__)
 

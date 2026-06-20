@@ -8,7 +8,7 @@ from typing import Any, Callable, Dict, List, Optional
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
-from .const import (
+from ..const import (
     CONF_DEVICE_NAME,
     CONF_DEVICE_SLAVE_ID,
     CONF_DEVICE_TYPE,
@@ -28,18 +28,18 @@ from .const import (
     ERROR_TYPE_TIMEOUT,
     REQUEST_MIN_DELAY_MS,
 )
-from .core.exceptions import (
+from ..core.exceptions import (
     GatewayConnectionError,
     GatewayTimeoutError,
     ModbusCRCError,
     ModbusError,
 )
-from .core.gateway import ConnectionPool, GatewayConnection
-from .core.protocol import ModbusRTU
-from .devices.base import BaseDevice
-from .devices.registry import DeviceRegistry
-from .errors import ErrorTrackerRegistry
-from .health import HealthMonitor
+from ..core.gateway import ConnectionPool, GatewayConnection
+from ..core.protocol import ModbusRTU
+from ..devices.base import BaseDevice
+from ..devices.registry import DeviceRegistry
+from ..errors import ErrorTrackerRegistry
+from ..health import HealthMonitor
 
 _LOGGER = logging.getLogger(__name__)
 

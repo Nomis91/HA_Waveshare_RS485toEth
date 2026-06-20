@@ -10,14 +10,14 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity import Entity, DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .const import (
+from ..const import (
     DOMAIN,
     ENTITY_CATEGORY_DIAGNOSTIC,
     HEALTH_STATE_HEALTHY,
     MANUFACTURER,
 )
-from .coordinators.integration import IntegrationCoordinator
-from .devices.base import BaseDevice
+from ..coordinators.integration import IntegrationCoordinator
+from ..devices.base import BaseDevice
 
 _LOGGER = logging.getLogger(__name__)
 
